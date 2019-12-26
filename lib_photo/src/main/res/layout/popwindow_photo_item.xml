@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:fresco="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="5dp"
+    android:background="#eeeeee"
+    android:orientation="vertical">
+
+    <FrameLayout
+        android:id="@+id/fl_dir_item"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:background="@drawable/pic_dir"
+        >
+        <com.facebook.drawee.view.SimpleDraweeView
+            android:id="@+id/id_dir_item_image"
+            android:layout_width="74dp"
+            android:layout_height="74dp"
+            android:scaleType="centerCrop"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="10dp"
+            fresco:actualImageScaleType="centerCrop"
+            fresco:fadeDuration="100"
+            fresco:failureImage="@drawable/pictures_no"
+            fresco:failureImageScaleType="centerInside"
+            fresco:placeholderImage="@drawable/pictures_no"
+            fresco:placeholderImageScaleType="centerInside"
+            />
+
+        <ImageView
+            android:id="@+id/imv_video"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/icon_home_play_video"
+            android:layout_gravity="center"
+            />
+    </FrameLayout>
+
+
+
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="10dp"
+        android:layout_toRightOf="@+id/fl_dir_item"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/id_item_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="所有图片"
+            android:textColor="@color/black"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/id_item_count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="1212张"
+            android:textColor="#444"
+            android:textSize="12sp" />
+
+    </LinearLayout>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="20dp"
+        android:src="@drawable/dir_choose" />
+</RelativeLayout>

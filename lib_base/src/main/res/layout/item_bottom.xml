@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+        <variable
+            name="item"
+            type="com.caiyu.lib_base.base.BaseBindingItem" />
+
+    </data>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/dimen_11sp"
+            android:paddingTop="17dp"
+            android:gravity="center"
+            android:paddingBottom="17dp"
+            android:textColor="@color/color_999999"
+            android:text="@string/bottom_no_more_tips"/>
+
+    </LinearLayout>
+</layout>

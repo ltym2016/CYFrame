@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowTranslucentStatus">true</item>
+        <!--<item name="android:windowIsTranslucent">true</item>-->
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="windowActionBar">false</item>
+        <item name="android:windowDisablePreview">true</item>
+
+    </style>
+    <!-- Base application theme. -->
+
+    <style name="Theme.Container" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- These values must be set for this mechanism to work -->
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+    </style>
+
+    <style name="loadingDialog" parent="android:Theme.Dialog">
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:backgroundDimEnabled">false</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+    </style>
+
+    <style name="loading_dialog_wrap">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:minWidth">120dp</item>
+        <item name="android:minHeight">56dp</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:layout_marginLeft">16dp</item>
+        <item name="android:layout_marginRight">16dp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:paddingLeft">16dp</item>
+        <item name="android:paddingRight">16dp</item>
+        <item name="android:paddingTop">16dp</item>
+        <item name="android:paddingBottom">16dp</item>
+        <item name="android:background">@drawable/loading_dialog_bg</item>
+
+
+    </style>
+
+    <style name="Loading">
+        <item name="loading_view_size">20dp</item>
+        <item name="android:color">#858C96</item>
+    </style>
+
+    <style name="loading_dialog" parent="Theme.AppCompat.Light.Dialog.Alert">
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowIsFloating">false</item>
+        <item name="android:windowIsTranslucent">false</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowCloseOnTouchOutside">true</item>
+        <item name="android:backgroundDimEnabled">true</item>
+    </style>
+
+
+    <declare-styleable name="Custom_Round_Image_View">
+        <attr name="radius" format="dimension" />
+        <attr name="left_top_radius" format="dimension" />
+        <attr name="right_top_radius" format="dimension" />
+        <attr name="right_bottom_radius" format="dimension" />
+        <attr name="left_bottom_radius" format="dimension" />
+    </declare-styleable>
+
+    <!--toolbar-->
+    <style name="ToolbarStyle" parent="Base.Widget.AppCompat.Toolbar">
+        <item name="android:minHeight">44dp</item>
+        <item name="android:layout_height">44dp</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="contentInsetStart">0dp</item>
+        <item name="titleMargin">0dp</item>
+    </style>
+
+    <!--线条-->
+    <style name="common_separate_line">
+        <item name="android:background">#dddddd</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">1px</item>
+    </style>
+
+    <style name="loadingDialogStyle" parent="android:Theme.Dialog">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <!-- 对话框是否有遮盖 -->
+        <item name="android:windowAnimationStyle">@android:style/Animation.Dialog</item>
+        <item name="android:backgroundDimEnabled">true</item>
+    </style>
+
+    <style name="NormalDialog" parent="Theme.AppCompat.Light.Dialog.Alert" >
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowIsTranslucent">false</item>
+        <item name="android:windowFullscreen">false</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowNoTitle">true</item>
+
+    </style>
+
+    <style name="BottomDialog" parent="NormalDialog" >
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:backgroundDimEnabled">true</item>
+    </style>
+
+    <style name="DialogTheme" parent="android:Theme.Dialog">
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:backgroundDimEnabled">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowFullscreen">true</item>
+    </style>
+
+    <style name="BottomDialogTheme" parent="Theme.AppCompat.Dialog">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowAnimationStyle">@style/Animation.Design.BottomSheetDialog</item>
+    </style>
+
+    <style name="mypopwindow_anim_style">
+        <item name="android:windowEnterAnimation">@anim/popshow_anim</item>
+        <!-- 指定显示的动画xml -->
+        <item name="android:windowExitAnimation">@anim/pophide_anim</item>
+        <!-- 指定消失的动画xml -->
+    </style>
+
+    <!-- 自定义Button 无需再写shape文件-->
+    <declare-styleable name="UIButton">
+        <!--shape 模式-->
+        <attr name="qf_shapeMode" format="enum">
+            <enum name="rectangle" value="0"/>
+            <enum name="oval" value="1"/>
+            <enum name="line" value="2"/>
+            <enum name="ring" value="3"/>
+        </attr>
+        <!--填充颜色-->
+        <attr name="qf_solid" format="color"/>
+        <!--边框颜色-->
+        <attr name="qf_stroke" format="color"/>
+        <!--边框宽度-->
+        <attr name="qf_strokeWidth" format="dimension"/>
+        <!--圆角大小-->
+        <attr name="qf_cornerRadius" format="dimension"/>
+        <!--按压颜色-->
+        <attr name="qf_pressedColor" format="color"/>
+        <!--圆角位置-->
+        <attr name="qf_cornerPosition">
+            <flag name="topLeft" value="1"/>
+            <flag name="topRight" value="2"/>
+            <flag name="bottomRight" value="4"/>
+            <flag name="bottomLeft" value="8"/>
+        </attr>
+        <!--是否开启动效-->
+        <attr name="qf_activeEnable" format="boolean" />
+        <!--渐变开始颜色-->
+        <attr name="qf_startColor" format="color" />
+        <!--渐变中间颜色-->
+        <attr name="qf_centerColor" format="color" />
+        <!--渐变结束颜色-->
+        <attr name="qf_endColor" format="color" />
+        <!--渐变方向-->
+        <attr name="qf_orientation" format="enum">
+            <enum name="TOP_BOTTOM" value="0"/>
+            <enum name="LEFT_RIGHT" value="1"/>
+            <enum name="TR_BL" value="2"/>
+            <enum name="TL_BR" value="3"/>
+        </attr>
+    </declare-styleable>
+</resources>

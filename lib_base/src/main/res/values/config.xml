@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--接口地址-->
+    <string name="host">http://129.211.139.235/api/</string>
+    <!--上传地址-->
+    <string name="upload_host">http://129.211.139.235/api/</string>
+    <!--测试版配置信息 END -->
+    <!-- App名字 -->
+    <string name="app_name">圈次元</string>
+    <!-- App拼音 -->
+    <string name="app_name_pinyin">comic</string>
+    <!-- App包名 -->
+    <!-- App版本号-->
+    <string name="versionName">1.0.0.0</string>
+    <!-- App版本号 -->
+    <string name="versionCode">1000</string>
+    <!-- 接口版本号 -->
+    <string name="interfaceCode">v1</string>
+    <!-- appid -->
+    <string name="app_id">2</string>
+    <!-- 微信appid-->
+    <string name="wechat_appid">wxcd3ef25c8321e62a</string>
+    <!-- 微信secret-->
+    <string name="wechat_appsecret">d948cb214ce61f05abf9ecdf7ddca1d0</string>
+    <!-- qq_appid-->
+    <string name="qq_appid">1109646267</string>
+    <!-- qq_scheme  tencent+appid-->
+    <string name="qq_scheme">tencent1109646267</string>
+    <!-- qq_key-->
+    <string name="qq_key">i0CVo84cZlC9UdT5</string>
+
+</resources>

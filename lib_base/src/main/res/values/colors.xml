@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--主背景色-->
+    <color name="theme_background">@android:color/white</color>
+    <!--主题色-->
+    <color name="color_theme">#FF8054</color>
+    <!--主题色50%透明度-->
+    <color name="color_theme_50">#7FFF8054</color>
+    <!--主题色20%透明度-->
+    <color name="color_theme_20">#33FF8054</color>
+    <!--标题栏字体颜色-->
+    <color name="color_title">@color/color_333333</color>
+    <!--标题栏Tab切换选中字体颜色-->
+    <color name="color_title_tab_select">@color/color_theme</color>
+    <!--标题栏Tab切换非选中字体颜色-->
+    <color name="color_title_tab_unselect">@color/color_999999</color>
+
+
+    <color name="white">@android:color/white</color>
+    <color name="black">@android:color/black</color>
+    <color name="transparent">@android:color/transparent</color>
+    <color name="color_333333">#333333</color>
+    <color name="color_999999">#999999</color>
+    <color name="color_fe6631">#FE6631</color>
+    <color name="color_666666">#666666</color>
+    <color name="color_dddddd">#dddddd</color>
+    <color name="color_585858">#585858</color>
+    <color name="color_0f0f0f">#0F0F0F</color>
+    <color name="color_click">#f5f5f5</color>
+</resources>

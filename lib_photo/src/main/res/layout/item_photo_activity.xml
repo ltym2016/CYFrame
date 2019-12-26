@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:fresco="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#343434"
+    android:orientation="vertical">
+
+
+    <!--<ImageView-->
+    <!--android:id="@+id/id_item_image"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="match_parent"-->
+    <!--android:scaleType="centerCrop"-->
+    <!--android:src="@mipmap/pictures_no" />-->
+
+    <com.facebook.drawee.view.SimpleDraweeView
+        android:id="@+id/item_take_photo_image"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:visibility="gone"
+        fresco:actualImageScaleType="centerCrop"
+        fresco:fadeDuration="100"
+        fresco:failureImage="@drawable/icon_take_photo"
+        fresco:failureImageScaleType="centerInside"
+        fresco:placeholderImage="@drawable/icon_take_photo"
+        fresco:placeholderImageScaleType="fitCenter"
+        fresco:viewAspectRatio="1.00" />
+
+    <com.facebook.drawee.view.SimpleDraweeView
+        android:id="@+id/item_image"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="visible"
+        android:scaleType="centerCrop"
+        fresco:actualImageScaleType="centerCrop"
+        fresco:fadeDuration="100"
+        fresco:failureImage="@drawable/pictures_no"
+        fresco:failureImageScaleType="centerInside"
+        fresco:placeholderImage="@drawable/pictures_no"
+        fresco:placeholderImageScaleType="centerInside"
+        fresco:viewAspectRatio="1.00" />
+
+    <ImageButton
+        android:id="@+id/id_item_select"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:background="@null"
+        android:clickable="false"
+        android:scaleType="centerInside"
+        android:paddingRight="5dp"
+        android:paddingTop="5dp"
+        android:paddingLeft="30dp"
+        android:paddingBottom="30dp"
+        android:visibility="visible" />
+
+    <ImageView
+        android:id="@+id/imv_video_mark"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="13dp"
+        android:layout_marginBottom="10dp"
+        android:src="@drawable/ic_photo_video_mark"
+        />
+
+    <TextView
+        android:id="@+id/tv_video_duration"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/imv_video_mark"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="10dp"
+        android:layout_marginBottom="8dp"
+        android:text="00:00"
+        android:textSize="15sp"
+        android:textColor="@color/white"
+        />
+</RelativeLayout>

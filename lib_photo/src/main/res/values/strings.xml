@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">lib_photo</string>
+
+    <string name="add_image_tips">最多选择%1$s张图片</string>
+</resources>
