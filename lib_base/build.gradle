@@ -43,7 +43,7 @@ dependencies {
     api "androidx.lifecycle:lifecycle-extensions:$lifecycle_version"
     api "androidx.lifecycle:lifecycle-reactivestreams:$lifecycle_version"
     api 'com.jakewharton.rxbinding3:rxbinding:3.0.0-alpha2'
-    api 'com.google.android.material:material:1.2.0-alpha03'
+    api 'com.google.android.material:material:1.2.0-alpha04'
     api 'com.orhanobut:logger:2.2.0'
     api 'com.github.ltym2016:StatusBarUtils:1.0.9'
     api 'com.trello.rxlifecycle3:rxlifecycle:3.0.0'
