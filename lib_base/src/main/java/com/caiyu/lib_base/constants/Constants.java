@@ -1,7 +1,7 @@
 package com.caiyu.lib_base.constants;
 
 import com.caiyu.lib_base.R;
-import com.caiyu.lib_base.utils.Utils;
+import com.samluys.jutils.Utils;
 
 import java.io.File;
 

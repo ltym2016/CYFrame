@@ -8,6 +8,7 @@ import androidx.viewpager.widget.ViewPager;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
@@ -16,12 +17,12 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.caiyu.lib_base.utils.StringUtils;
 import com.caiyu.lib_photo.R;
 import com.caiyu.lib_photo.adapter.PreviewPhotoAdapter;
 import com.caiyu.lib_photo.adapter.PreviewPhotoRVAdapter;
 import com.caiyu.lib_photo.entity.SelectImageEntity;
 import com.caiyu.lib_photo.view.MultiTouchViewPager;
+import com.samluys.jutils.StringUtils;
 import com.wangjing.recyclerview_drag.DragRecyclerView;
 import com.wangjing.recyclerview_drag.touch.OnItemMoveListener;
 import com.wangjing.recyclerview_drag.touch.OnItemStateChangedListener;
@@ -284,7 +285,7 @@ public class PreviewPhotoActivity extends AppCompatActivity {
     private List<String> formatChooseImage(List<SelectImageEntity> selectImageEntities, String defaultPath) {
         List<String> datas = new ArrayList<>();
         if (getSelectSize(selectImageEntities) <= 0) {
-            if (!StringUtils.isEmpty(defaultPath)) {
+            if (!TextUtils.isEmpty(defaultPath)) {
                 datas.add(defaultPath);
             }
         } else {

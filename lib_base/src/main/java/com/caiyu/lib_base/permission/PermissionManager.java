@@ -6,8 +6,8 @@ import android.content.Context;
 import android.os.Binder;
 import android.os.Build;
 
-import com.caiyu.lib_base.utils.ApplicationUtils;
-import com.caiyu.lib_base.utils.ToastUtils;
+import com.samluys.jutils.ToastUtils;
+import com.samluys.jutils.Utils;
 import com.yanzhenjie.permission.Action;
 import com.yanzhenjie.permission.AndPermission;
 import com.yanzhenjie.permission.Rationale;
@@ -55,7 +55,7 @@ public class PermissionManager {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
 
             // 检查是否有权限，有就直接return
-            if (hasPermissions(ApplicationUtils.getApp().getApplicationContext(), permissionGroup)) {
+            if (hasPermissions(Utils.getContext().getApplicationContext(), permissionGroup)) {
                 if (mListener.get() != null) {
                     mListener.get().onGranted();
                 }
@@ -64,7 +64,7 @@ public class PermissionManager {
             }
 
             // 没有权限则申请权限
-            AndPermission.with(ApplicationUtils.getApp().getApplicationContext())
+            AndPermission.with(Utils.getContext().getApplicationContext())
                     .runtime()
                     .permission(permissionGroup)
                     // 当用户不给权限时优先执行
@@ -88,7 +88,7 @@ public class PermissionManager {
                         @Override
                         public void onAction(List<String> data) {
 
-                            if(AndPermission.hasAlwaysDeniedPermission(ApplicationUtils.getApp().getApplicationContext(),permissionGroup)) {
+                            if(AndPermission.hasAlwaysDeniedPermission(Utils.getContext().getApplicationContext(),permissionGroup)) {
                                 // 用户勾选了"不再提示"，并拒绝，这个时候可以提示用户去设置里允许
                                 ToastUtils.showLong("请检查您的手机权限");
                             }
@@ -166,7 +166,7 @@ public class PermissionManager {
      * @return
      */
     public boolean hasPermissions (final Context context, final String... permissionGroup) {
-        return AndPermission.hasPermissions(ApplicationUtils.getApp().getApplicationContext(), permissionGroup);
+        return AndPermission.hasPermissions(Utils.getContext().getApplicationContext(), permissionGroup);
     }
 
 

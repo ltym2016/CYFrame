@@ -15,13 +15,13 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.caiyu.lib_base.constants.Constants;
-import com.caiyu.lib_base.utils.BitmapUtils;
-import com.caiyu.lib_base.utils.DeviceUtils;
-import com.caiyu.lib_base.utils.FileUtils;
-import com.caiyu.lib_base.utils.ImageUtils;
-import com.caiyu.lib_base.utils.ToastUtils;
 import com.caiyu.lib_photo.R;
 import com.caiyu.lib_photo.view.crop.ClipImageLayout;
+import com.samluys.jutils.BitmapUtils;
+import com.samluys.jutils.DeviceUtils;
+import com.samluys.jutils.FileUtils;
+import com.samluys.jutils.ImageUtils;
+import com.samluys.jutils.ToastUtils;
 import com.samluys.statusbar.StatusBarUtils;
 
 import java.io.File;

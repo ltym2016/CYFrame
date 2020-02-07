@@ -12,8 +12,6 @@ import androidx.core.content.ContextCompat;
 import androidx.viewpager.widget.PagerAdapter;
 
 import com.caiyu.lib_base.constants.Constants;
-import com.caiyu.lib_base.utils.ApplicationUtils;
-import com.caiyu.lib_base.utils.ScreenUtils;
 import com.caiyu.lib_photo.R;
 import com.caiyu.lib_photo.entity.SelectImageEntity;
 import com.caiyu.lib_photo.view.OnPhotoTapListener;
@@ -26,6 +24,8 @@ import com.facebook.imagepipeline.common.ResizeOptions;
 import com.facebook.imagepipeline.image.ImageInfo;
 import com.facebook.imagepipeline.request.ImageRequest;
 import com.facebook.imagepipeline.request.ImageRequestBuilder;
+import com.samluys.jutils.ScreenUtils;
+import com.samluys.jutils.Utils;
 
 import java.util.List;
 
@@ -50,8 +50,8 @@ public class PreviewPhotoAdapter extends PagerAdapter {
         ddefault_drawable = ContextCompat.getDrawable(mContext, R.drawable.preview_default);
         load_drawable = new AutoRotateDrawable(ContextCompat.getDrawable(mContext, R.drawable.loading_01), 1000);
         background_drawable = ContextCompat.getDrawable(mContext, R.color.black);
-        screenWidth = ScreenUtils.getScreenWidth(ApplicationUtils.getApp());
-        screenHeight = ScreenUtils.getScreenHeight(ApplicationUtils.getApp());
+        screenWidth = ScreenUtils.getScreenWidth(Utils.getContext());
+        screenHeight = ScreenUtils.getScreenHeight(Utils.getContext());
     }
 
     @Override

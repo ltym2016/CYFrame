@@ -14,9 +14,9 @@ import androidx.lifecycle.ViewModel;
 import androidx.lifecycle.ViewModelProviders;
 
 import com.caiyu.lib_base.constants.Constants;
-import com.caiyu.lib_base.utils.FileUtils;
 import com.caiyu.lib_base.view.LoadingDialog;
 import com.caiyu.lib_base.view.LoadingView;
+import com.samluys.jutils.FileUtils;
 import com.samluys.statusbar.StatusBarUtils;
 import com.trello.rxlifecycle3.components.support.RxAppCompatActivity;
 

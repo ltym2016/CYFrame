@@ -10,10 +10,10 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.caiyu.lib_base.imageloader.ImageLoader;
-import com.caiyu.lib_base.utils.ApplicationUtils;
-import com.caiyu.lib_base.utils.ScreenUtils;
 import com.caiyu.lib_photo.R;
 import com.facebook.drawee.view.SimpleDraweeView;
+import com.samluys.jutils.ScreenUtils;
+import com.samluys.jutils.Utils;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -37,8 +37,8 @@ public class FilePhotoSeeSelectedRVAdapter extends RecyclerView.Adapter<FilePhot
             this.infos = new ArrayList<>();
         }
 
-        screenWidth = ScreenUtils.getScreenWidth(ApplicationUtils.getApp());
-        screenHeight = ScreenUtils.getScreenHeight(ApplicationUtils.getApp());
+        screenWidth = ScreenUtils.getScreenWidth(Utils.getContext());
+        screenHeight = ScreenUtils.getScreenHeight(Utils.getContext());
     }
 
     /**
@@ -101,7 +101,7 @@ public class FilePhotoSeeSelectedRVAdapter extends RecyclerView.Adapter<FilePhot
 
         public ViewHolder(View itemView) {
             super(itemView);
-            int screenWidth = ScreenUtils.getScreenWidth(ApplicationUtils.getApp());
+            int screenWidth = ScreenUtils.getScreenWidth(Utils.getContext());
             simpleDraweeView = itemView.findViewById(R.id.simpleDraweeView);
             view_biankuang = itemView.findViewById(R.id.view_biankuang);
             FrameLayout.LayoutParams params = (FrameLayout.LayoutParams) simpleDraweeView.getLayoutParams();

@@ -5,6 +5,7 @@ import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.net.Uri;
 import android.os.AsyncTask;
+import android.text.TextUtils;
 import android.util.DisplayMetrics;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
@@ -19,10 +20,10 @@ import android.widget.PopupWindow;
 import android.widget.TextView;
 
 import com.caiyu.lib_base.constants.Constants;
-import com.caiyu.lib_base.utils.StringUtils;
 import com.caiyu.lib_photo.entity.FileEntity;
 import com.caiyu.lib_photo.entity.FolderBean;
 import com.facebook.drawee.view.SimpleDraweeView;
+import com.samluys.jutils.StringUtils;
 
 import java.util.List;
 
@@ -212,7 +213,7 @@ public class ListImageDirPopWindow extends PopupWindow {
 
         @Override
         protected void onPostExecute(String path) {
-            if (!StringUtils.isEmpty(path)) {
+            if (!TextUtils.isEmpty(path)) {
                 simpleDraweeView.setImageURI(Uri.parse(Constants.FILE_PREX + path));
             }
         }

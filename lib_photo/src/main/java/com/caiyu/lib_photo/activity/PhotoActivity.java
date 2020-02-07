@@ -33,16 +33,15 @@ import androidx.core.os.EnvironmentCompat;
 import com.caiyu.lib_base.constants.Constants;
 import com.caiyu.lib_base.permission.PermissionManager;
 import com.caiyu.lib_base.permission.PermissionRequestListener;
-import com.caiyu.lib_base.utils.ApplicationUtils;
-import com.caiyu.lib_base.utils.FileUtils;
-import com.caiyu.lib_base.utils.ToastUtils;
-import com.caiyu.lib_base.utils.Utils;
-import com.caiyu.lib_base.utils.log.LogUtils;
 import com.caiyu.lib_photo.ListImageDirPopWindow;
 import com.caiyu.lib_photo.R;
 import com.caiyu.lib_photo.adapter.PhotoAdapter;
 import com.caiyu.lib_photo.entity.FileEntity;
 import com.caiyu.lib_photo.entity.FolderBean;
+import com.samluys.jutils.FileUtils;
+import com.samluys.jutils.ToastUtils;
+import com.samluys.jutils.Utils;
+import com.samluys.jutils.log.LogUtils;
 import com.samluys.statusbar.StatusBarUtils;
 
 import java.io.File;
@@ -703,7 +702,7 @@ public class PhotoActivity extends AppCompatActivity {
             }
 
             if (photoFile != null) {
-                String authority = ApplicationUtils.getApp().getPackageName() + ".fileprovider";
+                String authority = Utils.getContext().getPackageName() + ".fileprovider";
                 mCurrentPhotoPath = photoFile.getAbsolutePath();
                 Uri currentPhotoUri = FileProvider.getUriForFile(this,
                         authority, photoFile);

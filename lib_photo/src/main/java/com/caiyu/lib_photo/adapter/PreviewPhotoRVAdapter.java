@@ -11,11 +11,11 @@ import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.caiyu.lib_base.imageloader.ImageLoader;
-import com.caiyu.lib_base.utils.ApplicationUtils;
-import com.caiyu.lib_base.utils.ScreenUtils;
 import com.caiyu.lib_photo.R;
 import com.caiyu.lib_photo.entity.SelectImageEntity;
 import com.facebook.drawee.view.SimpleDraweeView;
+import com.samluys.jutils.ScreenUtils;
+import com.samluys.jutils.Utils;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -39,8 +39,8 @@ public class PreviewPhotoRVAdapter extends RecyclerView.Adapter<PreviewPhotoRVAd
             this.selectImageEntities = new ArrayList<>();
         }
 
-        screenWidth = ScreenUtils.getScreenWidth(ApplicationUtils.getApp());
-        screenHeight = ScreenUtils.getScreenHeight(ApplicationUtils.getApp());
+        screenWidth = ScreenUtils.getScreenWidth(Utils.getContext());
+        screenHeight = ScreenUtils.getScreenHeight(Utils.getContext());
     }
 
     public void setInfos(List<SelectImageEntity> infos) {
@@ -104,7 +104,7 @@ public class PreviewPhotoRVAdapter extends RecyclerView.Adapter<PreviewPhotoRVAd
             view_top = itemView.findViewById(R.id.view_top);
             view_biankuang = itemView.findViewById(R.id.view_biankuang);
             FrameLayout.LayoutParams params = (FrameLayout.LayoutParams) simpleDraweeView.getLayoutParams();
-            int width = (int) (ScreenUtils.getScreenWidth(ApplicationUtils.getApp()) * 0.144);
+            int width = (int) (ScreenUtils.getScreenWidth(Utils.getContext()) * 0.144);
             params.width = width;
             params.height = width;
             simpleDraweeView.setLayoutParams(params);

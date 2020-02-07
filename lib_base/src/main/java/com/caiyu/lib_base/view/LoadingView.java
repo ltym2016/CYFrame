@@ -21,8 +21,8 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.caiyu.lib_base.R;
-import com.caiyu.lib_base.utils.NetworkUtils;
-import com.caiyu.lib_base.utils.log.LogUtils;
+import com.samluys.jutils.NetworkUtils;
+import com.samluys.jutils.log.LogUtils;
 
 
 /**

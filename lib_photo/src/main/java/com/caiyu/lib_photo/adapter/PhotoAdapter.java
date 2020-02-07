@@ -17,14 +17,14 @@ import android.widget.TextView;
 
 import com.caiyu.lib_base.constants.Constants;
 import com.caiyu.lib_base.imageloader.ImageLoader;
-import com.caiyu.lib_base.utils.ToastUtils;
-import com.caiyu.lib_base.utils.Utils;
-import com.caiyu.lib_base.utils.log.LogUtils;
 import com.caiyu.lib_photo.R;
 import com.caiyu.lib_photo.activity.FilePhotoSeeSelectedActivity;
 import com.caiyu.lib_photo.activity.PhotoActivity;
 import com.caiyu.lib_photo.entity.FileEntity;
 import com.facebook.drawee.view.SimpleDraweeView;
+import com.samluys.jutils.ToastUtils;
+import com.samluys.jutils.Utils;
+import com.samluys.jutils.log.LogUtils;
 
 import java.io.IOException;
 import java.io.Serializable;

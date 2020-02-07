@@ -1,8 +1,8 @@
 package com.caiyu.lib_base.http;
 
 import com.caiyu.lib_base.constants.Constants;
-import com.caiyu.lib_base.utils.SpUtils;
-import com.caiyu.lib_base.utils.log.LogUtils;
+import com.samluys.jutils.SPUtils;
+import com.samluys.jutils.log.LogUtils;
 
 import java.io.IOException;
 
@@ -28,8 +28,8 @@ public class InterceptorUtils {
             @Override
             public Response intercept(Chain chain) throws IOException {
 
-                String channelid = (String) SpUtils.getInstance().get(Constants.SP_CHANNEL_ID, "0");
-                String subchannelid = (String) SpUtils.getInstance().get(Constants.SP_SUB_CHANNEL_ID, "0");
+                String channelid = (String) SPUtils.getInstance().get(Constants.SP_CHANNEL_ID, "0");
+                String subchannelid = (String) SPUtils.getInstance().get(Constants.SP_SUB_CHANNEL_ID, "0");
 
                 Request mRequest = chain.request().newBuilder()
 //                        .header("channelid", channelid)// 渠道号

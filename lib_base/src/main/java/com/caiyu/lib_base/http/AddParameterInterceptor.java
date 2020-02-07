@@ -2,7 +2,8 @@ package com.caiyu.lib_base.http;
 
 import android.text.TextUtils;
 
-import com.caiyu.lib_base.utils.log.LogUtils;
+
+import com.samluys.jutils.log.LogUtils;
 
 import org.jetbrains.annotations.NotNull;
 
