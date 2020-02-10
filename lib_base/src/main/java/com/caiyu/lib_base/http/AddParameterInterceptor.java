@@ -3,6 +3,9 @@ package com.caiyu.lib_base.http;
 import android.text.TextUtils;
 
 
+import com.caiyu.lib_base.R;
+import com.samluys.jutils.MD5Utils;
+import com.samluys.jutils.Utils;
 import com.samluys.jutils.log.LogUtils;
 
 import org.jetbrains.annotations.NotNull;
@@ -107,17 +110,18 @@ public class AddParameterInterceptor implements Interceptor {
             }
             LogUtils.d("***请求参数***",sbDebug.toString());
 
-            /**** 暂时不加签名*****/
-//            sb.append("key="+ Utils.getStringFromConfig(R.string.md5_key));
-//            // MD5加密并转成大写
-//            String md5String = MD5Utils.encryptMD5ToString(sb.toString()).toUpperCase();
-//            // 将加密后的参数赋值给sign加到请求参数里
-//            Request mRequest = chain.request().newBuilder()
-//                    .addHeader("sign", md5String)
-//                    .build();
-//            return chain.proceed(mRequest);
-
-            return chain.proceed(chain.request());
+            if (HttpConfig.getInstance().isSign) {
+//                sb.append("key="+ Utils.getStringFromConfig(R.string.md5_key));
+//                // MD5加密并转成大写
+//                String md5String = MD5Utils.encryptMD5ToString(sb.toString()).toUpperCase();
+//                // 将加密后的参数赋值给sign加到请求参数里
+//                Request mRequest = chain.request().newBuilder()
+//                        .addHeader("sign", md5String)
+//                        .build();
+//                return chain.proceed(mRequest);
+            } else {
+                return chain.proceed(chain.request());
+            }
         } catch (Exception e) {
             e.printStackTrace();
         }

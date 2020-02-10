@@ -33,19 +33,25 @@ public class RetrofitClientManager {
                 if (mOkHttpClient == null) {
                     //设置Http缓存
                     Cache cache = new Cache(new File(Utils.getContext()
-                            .getExternalCacheDir(), "HttpCache"), 1024 * 1024 * 100);
+                            .getExternalCacheDir(), HttpConfig.getInstance().cacheName),
+                            HttpConfig.getInstance().cacheSize);
 
-                    mOkHttpClient = new OkHttpClient.Builder()
+                    OkHttpClient.Builder builder = new OkHttpClient.Builder()
                             .cache(cache)
                             .retryOnConnectionFailure(true)
-                            .connectTimeout(Constants.HTTP_TIME, TimeUnit.SECONDS)
-                            .writeTimeout(Constants.HTTP_TIME, TimeUnit.SECONDS)
-                            .readTimeout(Constants.HTTP_TIME, TimeUnit.SECONDS)
+                            .connectTimeout(HttpConfig.getInstance().timeout, TimeUnit.SECONDS)
+                            .writeTimeout(HttpConfig.getInstance().timeout, TimeUnit.SECONDS)
+                            .readTimeout(HttpConfig.getInstance().timeout, TimeUnit.SECONDS)
                             .addInterceptor(InterceptorUtils.headerInterceptor())
-                            .addInterceptor(InterceptorUtils.logInterceptor())
-//                            .addInterceptor(new AddParameterInterceptor())
-                            .addInterceptor(new ResponseInterceptor())
-                            .build();
+                            .addInterceptor(new AddParameterInterceptor())
+                            .addInterceptor(new ResponseInterceptor());
+
+                    if (HttpConfig.getInstance().isDebug) {
+                        builder.addInterceptor(InterceptorUtils.logInterceptor());
+                    }
+
+                    mOkHttpClient = builder.build();
+
                 }
             }
         }

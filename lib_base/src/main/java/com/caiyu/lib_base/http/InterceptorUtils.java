@@ -5,6 +5,9 @@ import com.samluys.jutils.SPUtils;
 import com.samluys.jutils.log.LogUtils;
 
 import java.io.IOException;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Set;
 
 import okhttp3.Interceptor;
 import okhttp3.Request;
@@ -31,19 +34,26 @@ public class InterceptorUtils {
                 String channelid = (String) SPUtils.getInstance().get(Constants.SP_CHANNEL_ID, "0");
                 String subchannelid = (String) SPUtils.getInstance().get(Constants.SP_SUB_CHANNEL_ID, "0");
 
-                Request mRequest = chain.request().newBuilder()
-//                        .header("channelid", channelid)// 渠道号
-//                        .header("version", ApplicationUtils.getApp().getResources().getString(R.string.versionName))
-//                        .header("subchannelid",subchannelid)
-//                        .header("interfaceversion",ApplicationUtils.getApp().getResources().getString(R.string.interfaceCode))
-//                        .header("deviceid", DeviceUtils.getDeviceId())// 设备ID
-//                        .header("appid", ApplicationUtils.getApp().getResources().getString(R.string.app_id))// 每次安装的code
-//                        .header("os", "1")// 1 是Android 2 是IOS
-//                        .header("timestamp", System.currentTimeMillis()/1000+"")
-//                        .header("Token", UserInfoUtils.getInstance().getToken())
-                        .header("clientid", "3")
-                        .build();
-                return chain.proceed(mRequest);
+                Request.Builder builder = chain.request().newBuilder();
+                HashMap<String, String> headersHashMap = HttpConfig.getInstance().headerHashMap;
+                Set keys;
+                if (headersHashMap != null && headersHashMap.size() > 0) {
+                    keys = headersHashMap.keySet();
+                    if (keys.size() > 0) {
+                        okhttp3.Headers.Builder headersBuilder = new okhttp3.Headers.Builder();
+                        Iterator var = keys.iterator();
+
+                        while(var.hasNext()) {
+                            String keyx = (String)var.next();
+                            headersBuilder.set(keyx, headersBuilder.get(keyx));
+                        }
+
+                        builder.headers(headersBuilder.build());
+                    }
+                }
+
+                Request mRequest1 = builder.build();
+                return chain.proceed(mRequest1);
             }
         };
     }
