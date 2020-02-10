@@ -7,6 +7,7 @@ import com.samluys.jutils.log.LogUtils;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Iterator;
+import java.util.Map;
 import java.util.Set;
 
 import okhttp3.Interceptor;
@@ -40,20 +41,19 @@ public class InterceptorUtils {
                 if (headersHashMap != null && headersHashMap.size() > 0) {
                     keys = headersHashMap.keySet();
                     if (keys.size() > 0) {
-                        okhttp3.Headers.Builder headersBuilder = new okhttp3.Headers.Builder();
-                        Iterator var = keys.iterator();
+                        Iterator it = keys.iterator();
+                        while (it.hasNext()) {
+                            String key = (String) it.next();
+                            String value = headersHashMap.get(key);
 
-                        while(var.hasNext()) {
-                            String keyx = (String)var.next();
-                            headersBuilder.set(keyx, headersBuilder.get(keyx));
+                            builder.addHeader(key, value);
                         }
 
-                        builder.headers(headersBuilder.build());
                     }
                 }
 
-                Request mRequest1 = builder.build();
-                return chain.proceed(mRequest1);
+                Request mRequest = builder.build();
+                return chain.proceed(mRequest);
             }
         };
     }

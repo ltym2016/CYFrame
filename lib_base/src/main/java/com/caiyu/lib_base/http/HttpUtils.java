@@ -1,10 +1,5 @@
 package com.caiyu.lib_base.http;
 
-import android.app.Activity;
-import android.content.Intent;
-
-import androidx.fragment.app.Fragment;
-
 import java.util.HashMap;
 
 /**
@@ -16,18 +11,30 @@ import java.util.HashMap;
 public class HttpUtils {
 
 
-    public static Builder init() {
-        return new Builder();
+    public static Builder init(String host) {
+        return new Builder(host);
     }
-
 
     public static class Builder {
 
         private final HttpConfig mHttpConfig;
 
-        private Builder() {
+        private Builder(String host) {
             mHttpConfig = HttpConfig.getInstance();
+            mHttpConfig.host = host;
         }
+
+
+        /**
+         * 接口域名
+         * @param uploadHost
+         * @return
+         */
+        public Builder uploadHost(String uploadHost) {
+            mHttpConfig.uploadHost = uploadHost;
+            return this;
+        }
+
 
         /**
          * 缓存存放的文件名称
@@ -88,19 +95,5 @@ public class HttpUtils {
             mHttpConfig.isSign = isSign;
             return this;
         }
-
-//        public void forResult(int requestCode) {
-//            if (mActivity == null) {
-//                return;
-//            }
-//
-//            Intent intent = new Intent(mActivity, PhotoActivity.class);
-//
-//            if (mFragment != null) {
-//                mFragment.startActivityForResult(intent, requestCode);
-//            } else {
-//                mActivity.startActivityForResult(intent, requestCode);
-//            }
-//        }
     }
 }

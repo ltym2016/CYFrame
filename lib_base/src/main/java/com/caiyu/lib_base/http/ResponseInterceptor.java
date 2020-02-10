@@ -23,12 +23,15 @@ public class ResponseInterceptor extends ResponseBodyInterceptor {
 
         JSONObject jsonObject = null;
         try {
-            jsonObject = new JSONObject(body);
-            String data = jsonObject.getString("data");
-            // 这里对接口可能返回的data类型，无数据的情况做统一处理
-            if (TextUtils.isEmpty(data) || "[]".equals(data) || "{}".equals(data)) {
-                jsonObject.put("data", null);
+            if (!TextUtils.isEmpty(body)) {
+                jsonObject = new JSONObject(body);
+                String data = jsonObject.getString("data");
+                // 这里对接口可能返回的data类型，无数据的情况做统一处理
+                if (TextUtils.isEmpty(data) || "[]".equals(data) || "{}".equals(data)) {
+                    jsonObject.put("data", null);
+                }
             }
+
         } catch (JSONException e) {
             e.printStackTrace();
         }

@@ -61,9 +61,9 @@
             android:text="@string/try_again"
             android:textColor="@android:color/white"
             android:textSize="14sp"
-            app:qf_activeEnable="true"
-            app:qf_solid="@color/color_theme"
-            app:qf_cornerRadius="18dp"
+            app:ui_activeEnable="true"
+            app:ui_solidColor="@color/color_theme"
+            app:ui_cornerRadius="18dp"
             android:gravity="center"/>
 
     </LinearLayout>
@@ -106,9 +106,9 @@
             android:visibility="gone"
             android:textSize="14sp"
             android:textColor="@android:color/white"
-            app:qf_activeEnable="true"
-            app:qf_solid="@color/color_theme"
-            app:qf_cornerRadius="18dp"
+            app:ui_activeEnable="true"
+            app:ui_solidColor="@color/color_theme"
+            app:ui_cornerRadius="18dp"
             android:gravity="center"/>
     </LinearLayout>
 

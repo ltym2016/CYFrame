@@ -21,7 +21,7 @@ public class RetrofitHelper extends RetrofitClientManager {
     }
 
     public static <T> T getApiService(Class<T> clazz) {
-        return getRetrofitApi(Constants.HOST, clazz);
+        return getRetrofitApi(HttpConfig.getInstance().host, clazz);
     }
 
     public static <T> T getUploadService(Class<T> clazz, String host) {

@@ -16,6 +16,8 @@ public class HttpConfig {
     public HashMap<String, String> headerHashMap;
     public boolean isDebug = false;
     public boolean isSign;// 是否开启MD5签名
+    public String host;
+    public String uploadHost;
 
     private HttpConfig() {
 

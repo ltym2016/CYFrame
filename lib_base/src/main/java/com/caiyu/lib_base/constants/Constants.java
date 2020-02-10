@@ -15,15 +15,6 @@ public class Constants {
 
 
     /**
-     * 接口地址
-     */
-    public final static String HOST = Utils.getStringFromConfig(R.string.host);
-    /**
-     * 上传地址
-     */
-    public final static String UPLOAD_HOST = Utils.getStringFromConfig(R.string.upload_host);
-
-    /**
      * 上传图片临时路径
      */
     public static final String TEMP = "temp" + File.separator;
