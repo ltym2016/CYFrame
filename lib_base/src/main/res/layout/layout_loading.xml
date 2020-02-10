@@ -53,7 +53,7 @@
             android:textColor="#939292"
             android:textSize="13sp" />
 
-        <com.caiyu.lib_base.view.UIButton
+        <com.samluys.uibutton.UIButton
             android:id="@+id/btn_tryAgain"
             android:layout_width="105dp"
             android:layout_height="36dp"
@@ -97,7 +97,7 @@
             android:lineSpacingExtra="5dp"
             android:textColor="#939292"
             android:text="@string/loading_fail"/>
-        <com.caiyu.lib_base.view.UIButton
+        <com.samluys.uibutton.UIButton
             android:id="@+id/btn_refresh"
             android:layout_width="105dp"
             android:layout_height="36dp"
