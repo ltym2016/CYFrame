@@ -66,5 +66,5 @@ dependencies {
     api 'com.youth.banner:banner:1.4.10'
     api 'com.shizhefei:ViewPagerIndicator:1.1.9'
     api 'com.github.ltym2016:UIButton:1.0.0'
-    api 'com.github.ltym2016:JUtils:1.0.6'
+    api 'com.github.ltym2016:JUtils:1.0.7'
 }
