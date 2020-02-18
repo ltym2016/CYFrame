@@ -20,11 +20,24 @@ public class RetrofitHelper extends RetrofitClientManager {
         return new RetrofitHelper().getRetrofit(url, clazz);
     }
 
+    /**
+     * 设置固定host的请求
+     * @param clazz
+     * @param <T>
+     * @return
+     */
     public static <T> T getApiService(Class<T> clazz) {
         return getRetrofitApi(HttpConfig.getInstance().host, clazz);
     }
 
-    public static <T> T getUploadService(Class<T> clazz, String host) {
+    /**
+     * 设置动态host的请求
+     * @param clazz
+     * @param host
+     * @param <T>
+     * @return
+     */
+    public static <T> T getHostApiService(Class<T> clazz, String host) {
         return getRetrofitApi(host, clazz);
     }
 
