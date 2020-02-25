@@ -1,7 +1,6 @@
 package com.caiyu.lib_base.http;
 
 
-import com.caiyu.lib_base.constants.Constants;
 import com.samluys.jutils.Utils;
 
 import java.io.File;
@@ -41,9 +40,7 @@ public class RetrofitClientManager {
                             .retryOnConnectionFailure(true)
                             .connectTimeout(HttpConfig.getInstance().timeout, TimeUnit.SECONDS)
                             .writeTimeout(HttpConfig.getInstance().timeout, TimeUnit.SECONDS)
-                            .readTimeout(HttpConfig.getInstance().timeout, TimeUnit.SECONDS)
-                            .addInterceptor(new AddParameterInterceptor())
-                            .addInterceptor(new ResponseInterceptor());
+                            .readTimeout(HttpConfig.getInstance().timeout, TimeUnit.SECONDS);
 
                     if (HttpConfig.getInstance().interceptor != null) {
                         // 添加请求头
@@ -54,6 +51,9 @@ public class RetrofitClientManager {
                         // 设置log格式
                         builder.addInterceptor(InterceptorUtils.logInterceptor());
                     }
+
+                    builder.addInterceptor(new AddParameterInterceptor());
+                    builder.addInterceptor(new ResponseInterceptor());
 
                     mOkHttpClient = builder.build();
 

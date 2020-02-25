@@ -38,6 +38,16 @@ public class MyApplication extends Application {
         HttpUtils.init(Utils.getStringFromConfig(R.string.host))
                 .cacheName("http_cache")
                 .isDebug(true)
-                .timeout(15);
+                .timeout(15)
+                .interceptor(new Interceptor() {
+                    @Override
+                    public Response intercept(Chain chain) throws IOException {
+                        // 这里可以添加请求头
+                        Request.Builder builder = chain.request().newBuilder();
+                        builder.addHeader("clientid", "3");
+                        Request mRequest = builder.build();
+                        return chain.proceed(mRequest);
+                    }
+                });
     }
 }
