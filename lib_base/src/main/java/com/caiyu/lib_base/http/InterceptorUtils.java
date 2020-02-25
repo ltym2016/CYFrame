@@ -27,36 +27,36 @@ public class InterceptorUtils {
      *
      * @return
      */
-    public static Interceptor headerInterceptor() {
-        return new Interceptor() {
-            @Override
-            public Response intercept(Chain chain) throws IOException {
-
-                String channelid = (String) SPUtils.getInstance().get(Constants.SP_CHANNEL_ID, "0");
-                String subchannelid = (String) SPUtils.getInstance().get(Constants.SP_SUB_CHANNEL_ID, "0");
-
-                Request.Builder builder = chain.request().newBuilder();
-                HashMap<String, String> headersHashMap = HttpConfig.getInstance().headerHashMap;
-                Set keys;
-                if (headersHashMap != null && headersHashMap.size() > 0) {
-                    keys = headersHashMap.keySet();
-                    if (keys.size() > 0) {
-                        Iterator it = keys.iterator();
-                        while (it.hasNext()) {
-                            String key = (String) it.next();
-                            String value = headersHashMap.get(key);
-
-                            builder.addHeader(key, value);
-                        }
-
-                    }
-                }
-
-                Request mRequest = builder.build();
-                return chain.proceed(mRequest);
-            }
-        };
-    }
+//    public static Interceptor headerInterceptor() {
+//        return new Interceptor() {
+//            @Override
+//            public Response intercept(Chain chain) throws IOException {
+//
+//                String channelid = (String) SPUtils.getInstance().get(Constants.SP_CHANNEL_ID, "0");
+//                String subchannelid = (String) SPUtils.getInstance().get(Constants.SP_SUB_CHANNEL_ID, "0");
+//
+//                Request.Builder builder = chain.request().newBuilder();
+//                HashMap<String, String> headersHashMap = HttpConfig.getInstance().headerHashMap;
+//                Set keys;
+//                if (headersHashMap != null && headersHashMap.size() > 0) {
+//                    keys = headersHashMap.keySet();
+//                    if (keys.size() > 0) {
+//                        Iterator it = keys.iterator();
+//                        while (it.hasNext()) {
+//                            String key = (String) it.next();
+//                            String value = headersHashMap.get(key);
+//
+//                            builder.addHeader(key, value);
+//                        }
+//
+//                    }
+//                }
+//
+//                Request mRequest = builder.build();
+//                return chain.proceed(mRequest);
+//            }
+//        };
+//    }
 
     /**
      * 日志拦截器

@@ -42,11 +42,16 @@ public class RetrofitClientManager {
                             .connectTimeout(HttpConfig.getInstance().timeout, TimeUnit.SECONDS)
                             .writeTimeout(HttpConfig.getInstance().timeout, TimeUnit.SECONDS)
                             .readTimeout(HttpConfig.getInstance().timeout, TimeUnit.SECONDS)
-                            .addInterceptor(InterceptorUtils.headerInterceptor())
                             .addInterceptor(new AddParameterInterceptor())
                             .addInterceptor(new ResponseInterceptor());
 
+                    if (HttpConfig.getInstance().interceptor != null) {
+                        // 添加请求头
+                        builder.addInterceptor(HttpConfig.getInstance().interceptor);
+                    }
+
                     if (HttpConfig.getInstance().isDebug) {
+                        // 设置log格式
                         builder.addInterceptor(InterceptorUtils.logInterceptor());
                     }
 

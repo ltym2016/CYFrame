@@ -3,6 +3,7 @@ package com.caiyu.cyframe;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.View;
 
 import com.caiyu.cyframe.api.ApiService;
 import com.caiyu.lib_base.http.BaseResponse;
@@ -27,6 +28,21 @@ public class MainActivity extends AppCompatActivity {
                 if (baseResponse != null) {
                     LogUtils.e(baseResponse.toString());
                 }
+            }
+        });
+
+        findViewById(R.id.btn_click).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Observable<BaseResponse> api = RetrofitHelper.getApiService(ApiService.class).appInit();
+                RetrofitHelper.subscript(api, new Consumer<BaseResponse>() {
+                    @Override
+                    public void accept(BaseResponse baseResponse) throws Exception {
+                        if (baseResponse != null) {
+                            LogUtils.e(baseResponse.toString());
+                        }
+                    }
+                });
             }
         });
     }

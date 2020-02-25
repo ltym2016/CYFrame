@@ -2,6 +2,8 @@ package com.caiyu.lib_base.http;
 
 import java.util.HashMap;
 
+import okhttp3.Interceptor;
+
 /**
  * @author luys
  * @describe
@@ -67,16 +69,6 @@ public class HttpUtils {
         }
 
         /**
-         * 设置请求头
-         * @param hashMap
-         * @return
-         */
-        public Builder headers(HashMap<String,String> hashMap) {
-            mHttpConfig.headerHashMap = hashMap;
-            return this;
-        }
-
-        /**
          * 是否为debug模式
          * @param isDebug
          * @return
@@ -93,6 +85,16 @@ public class HttpUtils {
          */
         public Builder isSign(boolean isSign) {
             mHttpConfig.isSign = isSign;
+            return this;
+        }
+
+        /**
+         * 是否开启MD5签名
+         * @param interceptor
+         * @return
+         */
+        public Builder interceptor(Interceptor interceptor) {
+            mHttpConfig.interceptor = interceptor;
             return this;
         }
     }
