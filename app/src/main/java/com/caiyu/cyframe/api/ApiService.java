@@ -3,6 +3,8 @@ package com.caiyu.cyframe.api;
 import com.caiyu.lib_base.http.BaseResponse;
 
 import io.reactivex.Observable;
+import retrofit2.http.Field;
+import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.POST;
 
 /**
@@ -26,7 +28,10 @@ public interface ApiService {
      *
      * @return 数据
      */
-    @POST("common/appInit")
-    Observable<BaseResponse> appInit();
+    @FormUrlEncoded
+    @POST("topics/RecommendTopicsList")
+    Observable<BaseResponse> appInit(
+            @Field("page") int page,
+            @Field("pagenum") int pagenum);
 
 }

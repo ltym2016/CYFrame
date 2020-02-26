@@ -110,7 +110,6 @@ public class AddParameterInterceptor implements Interceptor {
             }
             LogUtils.d("***请求参数***",sbDebug.toString());
 
-            if (HttpConfig.getInstance().isSign) {
 //                sb.append("key="+ Utils.getStringFromConfig(R.string.md5_key));
 //                // MD5加密并转成大写
 //                String md5String = MD5Utils.encryptMD5ToString(sb.toString()).toUpperCase();
@@ -119,9 +118,7 @@ public class AddParameterInterceptor implements Interceptor {
 //                        .addHeader("sign", md5String)
 //                        .build();
 //                return chain.proceed(mRequest);
-            } else {
-                return chain.proceed(chain.request());
-            }
+            return chain.proceed(chain.request());
         } catch (Exception e) {
             e.printStackTrace();
         }

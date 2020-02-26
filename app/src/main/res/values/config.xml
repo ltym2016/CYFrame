@@ -2,7 +2,7 @@
 <resources>
 
     <!--接口地址-->
-    <string name="host">http://129.211.139.235/api/</string>
+    <string name="host">https://spare.xgltqr.cn/api/</string>
     <!--上传地址-->
     <string name="upload_host">http://129.211.139.235/api/</string>
     <!--测试版配置信息 END -->

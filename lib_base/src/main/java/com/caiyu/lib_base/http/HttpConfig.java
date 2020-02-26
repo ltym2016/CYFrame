@@ -16,10 +16,10 @@ public class HttpConfig {
     public int cacheSize = 10 * 1024 * 1024;
     public int timeout = 15;
     public boolean isDebug = false;
-    public boolean isSign;// 是否开启MD5签名
-    public String host;
-    public String uploadHost;
-    public Interceptor interceptor;
+    public String host;// 常用请求地址
+    public String uploadHost;// 其他请求地址
+    public Interceptor addHeaderInterceptor;// 添加请求头
+    public Interceptor getParamsInterceptor;// 获取请求参数用来签名等操作
 
     private HttpConfig() {
 

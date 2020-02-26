@@ -21,20 +21,20 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
 
-        Observable<BaseResponse> api = RetrofitHelper.getApiService(ApiService.class).appInit();
-        RetrofitHelper.subscript(api, new Consumer<BaseResponse>() {
-            @Override
-            public void accept(BaseResponse baseResponse) throws Exception {
-                if (baseResponse != null) {
-                    LogUtils.e(baseResponse.toString());
-                }
-            }
-        });
+//        Observable<BaseResponse> api = RetrofitHelper.getApiService(ApiService.class).appInit();
+//        RetrofitHelper.subscript(api, new Consumer<BaseResponse>() {
+//            @Override
+//            public void accept(BaseResponse baseResponse) throws Exception {
+//                if (baseResponse != null) {
+//                    LogUtils.e(baseResponse.toString());
+//                }
+//            }
+//        });
 
         findViewById(R.id.btn_click).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Observable<BaseResponse> api = RetrofitHelper.getApiService(ApiService.class).appInit();
+                Observable<BaseResponse> api = RetrofitHelper.getApiService(ApiService.class).appInit(1, 10);
                 RetrofitHelper.subscript(api, new Consumer<BaseResponse>() {
                     @Override
                     public void accept(BaseResponse baseResponse) throws Exception {
