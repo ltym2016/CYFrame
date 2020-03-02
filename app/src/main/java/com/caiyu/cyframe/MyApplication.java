@@ -1,6 +1,9 @@
 package com.caiyu.cyframe;
 
 import android.app.Application;
+import android.content.Context;
+
+import androidx.multidex.MultiDex;
 
 import com.caiyu.lib_base.http.HttpUtils;
 import com.samluys.jutils.Utils;
@@ -64,5 +67,11 @@ public class MyApplication extends Application {
                 return chain.proceed(chain.request());
             }
         });
+    }
+
+    @Override
+    protected void attachBaseContext(Context base) {
+        super.attachBaseContext(base);
+        MultiDex.install(base);
     }
 }

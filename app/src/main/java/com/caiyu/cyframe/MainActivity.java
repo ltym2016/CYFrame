@@ -1,49 +1,22 @@
 package com.caiyu.cyframe;
 
-import androidx.appcompat.app.AppCompatActivity;
+import com.caiyu.cyframe.databinding.ActivityMainBinding;
+import com.caiyu.lib_base.base.BaseActivity;
 
-import android.os.Bundle;
-import android.view.View;
-
-import com.caiyu.cyframe.api.ApiService;
-import com.caiyu.lib_base.http.BaseResponse;
-import com.caiyu.lib_base.http.RetrofitHelper;
-import com.samluys.jutils.log.LogUtils;
-
-import io.reactivex.Observable;
-import io.reactivex.functions.Consumer;
-
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends BaseActivity<ActivityMainBinding, MainViewModel> {
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+    protected void setOrientation() {
 
+    }
 
-//        Observable<BaseResponse> api = RetrofitHelper.getApiService(ApiService.class).appInit();
-//        RetrofitHelper.subscript(api, new Consumer<BaseResponse>() {
-//            @Override
-//            public void accept(BaseResponse baseResponse) throws Exception {
-//                if (baseResponse != null) {
-//                    LogUtils.e(baseResponse.toString());
-//                }
-//            }
-//        });
+    @Override
+    public int getLayoutId() {
+        return R.layout.activity_main;
+    }
 
-        findViewById(R.id.btn_click).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Observable<BaseResponse> api = RetrofitHelper.getApiService(ApiService.class).appInit(1, 10);
-                RetrofitHelper.subscript(api, new Consumer<BaseResponse>() {
-                    @Override
-                    public void accept(BaseResponse baseResponse) throws Exception {
-                        if (baseResponse != null) {
-                            LogUtils.e(baseResponse.toString());
-                        }
-                    }
-                });
-            }
-        });
+    @Override
+    public int initVariableId() {
+        return BR.viewModel;
     }
 }

@@ -1,2 +1,21 @@
 <resources>
+    <string name="register_tips">未注册手机号将自动生成新账户！</string>
+    <string name="login">登录</string>
+    <string name="binding">绑定</string>
+    <string name="login_protocol">登录代表您同意《用户协议》和《隐私政策》</string>
+    <string name="or_login_third">或使用第三方账号登录</string>
+    <string name="qq_login">QQ登录</string>
+    <string name="wechat_login">微信登录</string>
+    <string name="welcome_app">欢迎来到圈次元</string>
+    <string name="select_sex_tips">请选择您的性别，方便我们推荐合适的内容</string>
+    <string name="select_boy">我是男生</string>
+    <string name="select_girl">我是女生</string>
+    <string name="pass">跳过</string>
+    <string name="hint_input_phone">请输入手机号</string>
+    <string name="hint_input_code">请输入短信验证码</string>
+    <string name="binding_phone">绑定手机</string>
+    <string name="code_is_empty">验证码为空</string>
+    <string name="phone_style_error">手机号码格式不正确</string>
+    <string name="login_success">登录成功，欢迎回来主人</string>
+    <string name="login_tips">主人，请先登录</string>
 </resources>
