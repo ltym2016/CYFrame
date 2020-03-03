@@ -80,21 +80,21 @@
 
         <com.samluys.uibutton.UIButton
             android:layout_width="wrap_content"
-            android:layout_height="26dp"
+            android:layout_height="30dp"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:ui_solidColor="@color/color_f5f5f5"
+            app:ui_solidColor="@color/color_theme"
             android:text="移除黑名单"
             android:gravity="center"
             android:paddingLeft="13dp"
             android:paddingRight="13dp"
             android:onClick="@{(view)->viewClick.onViewClick(view, item)}"
             android:layout_marginRight="14dp"
-            android:textColor="@color/color_939292"
+            android:textColor="@color/white"
             android:textSize="@dimen/dimen_14sp"
-            app:ui_cornerRadius="13dp"
-            app:qf_activeEnable="true"
+            app:ui_cornerRadius="15dp"
+            app:ui_activeEnable="true"
             />
 
         <View style="@style/common_separate_line"

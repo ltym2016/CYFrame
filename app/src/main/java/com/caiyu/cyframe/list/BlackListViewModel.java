@@ -5,6 +5,7 @@ import android.app.Application;
 import androidx.annotation.NonNull;
 
 import com.caiyu.cyframe.R;
+import com.caiyu.lib_base.base.BaseBindingItem;
 import com.caiyu.lib_base.base.BaseViewModel;
 import com.caiyu.lib_base.callback.BindingAction;
 import com.caiyu.lib_base.callback.BindingCommand;
@@ -38,11 +39,16 @@ public class BlackListViewModel extends BaseViewModel {
         }
     });
 
-    public List<BlackListEntity> getData() {
+    public List<BaseBindingItem> getData() {
 
-        List<BlackListEntity> mList = new ArrayList<>();
+        List<BaseBindingItem> mList = new ArrayList<>();
         for (int i = 0; i < 20; i++) {
-            mList.add(new BlackListEntity());
+            if (i % 5 ==0) {
+                mList.add(new BlackList2Entity());
+            } else {
+                mList.add(new BlackListEntity());
+            }
+
         }
 
         return mList;

@@ -11,6 +11,7 @@ import com.caiyu.lib_base.base.BaseBindingAdapter;
 import com.caiyu.lib_base.base.BaseBindingItem;
 import com.caiyu.lib_base.base.BaseFragment;
 import com.caiyu.lib_base.base.OnViewClickListener;
+import com.samluys.jutils.ToastUtils;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -56,8 +57,10 @@ public class BlackListFragment extends BaseFragment<FragmentBlackListBinding, Bl
             @Override
             public void onViewClick(View view, BaseBindingItem item) {
                 int index = mList.indexOf(item);
-                BlackListEntity entity = (BlackListEntity) item;
-
+                if (item instanceof BlackListEntity) {
+                    BlackListEntity entity = (BlackListEntity) item;
+                    ToastUtils.showLong("position:"+index);
+                }
             }
         });
         mAdapter.setList(mList);

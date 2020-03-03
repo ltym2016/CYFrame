@@ -4,6 +4,7 @@ import com.caiyu.cyframe.R;
 import com.caiyu.lib_base.base.BaseBindingItem;
 import com.caiyu.lib_base.callback.BindingAction;
 import com.caiyu.lib_base.callback.BindingCommand;
+import com.samluys.jutils.ToastUtils;
 
 /**
  * @author luys
@@ -25,7 +26,7 @@ public class BlackListEntity implements BaseBindingItem {
 
     private int uid;
     private String avatar;
-    private String nickname;
+    private String nickname = "测试用户";
     private String level_num;
     private int gender;
     private String introduction;
@@ -35,7 +36,7 @@ public class BlackListEntity implements BaseBindingItem {
     public BindingCommand personHomeCommand = new BindingCommand(new BindingAction() {
         @Override
         public void call() {
-
+            ToastUtils.showLong("跳转用户首页");
         }
     });
 
