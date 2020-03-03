@@ -34,11 +34,4 @@ public class MainViewModel extends BaseViewModel {
             startContainerActivity(BlackListFragment.class.getCanonicalName());
         }
     });
-
-    public BindingCommand jumpMulListCommand = new BindingCommand(new BindingAction() {
-        @Override
-        public void call() {
-
-        }
-    });
 }
