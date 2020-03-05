@@ -31,7 +31,7 @@
             android:background="@drawable/selector_item_click"
             android:scaleType="centerInside"
             android:visibility="@{viewModel.leftImage == 0 ? View.GONE : View.VISIBLE}"
-            android:src="@{viewModel.leftImage}"
+            android:src="@{viewModel.leftImage.intValue()}"
             app:onClickCommand="@{viewModel.backClick}"
             />
 
@@ -69,7 +69,7 @@
             android:paddingRight="16dp"
             android:paddingLeft="16dp"
             app:onClickCommand="@{viewModel.rightClick}"
-            android:src="@{viewModel.rightImage}"
+            android:src="@{viewModel.rightImage.intValue()}"
             android:visibility="@{viewModel.rightImage != 0 ? View.VISIBLE:View.GONE}" />
 
         <TextView

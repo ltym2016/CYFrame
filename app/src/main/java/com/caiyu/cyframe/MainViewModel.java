@@ -5,6 +5,7 @@ import android.app.Application;
 import androidx.annotation.NonNull;
 
 import com.caiyu.cyframe.list.BlackListFragment;
+import com.caiyu.cyframe.list.ListFragment;
 import com.caiyu.cyframe.login.LoginActivity;
 import com.caiyu.lib_base.base.BaseViewModel;
 import com.caiyu.lib_base.callback.BindingAction;
@@ -31,7 +32,7 @@ public class MainViewModel extends BaseViewModel {
     public BindingCommand jumpListCommand = new BindingCommand(new BindingAction() {
         @Override
         public void call() {
-            startContainerActivity(BlackListFragment.class.getCanonicalName());
+            startContainerActivity(ListFragment.class.getCanonicalName());
         }
     });
 }
